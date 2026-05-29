@@ -4,9 +4,9 @@ import LBorder from './components/LBorder.vue'
 </script>
 
 <template>
-  <div class="app-shell">
+  <div class="relative flex flex-col min-h-dvh overflow-hidden bg-bg text-text font-ubuntu antialiased">
     <LBorder />
-    <main class="page-content">
+    <main class="flex-1 flex items-center justify-center p-8 pb-20">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
@@ -17,26 +17,12 @@ import LBorder from './components/LBorder.vue'
   </div>
 </template>
 
-<style scoped>
-.app-shell {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: 100dvh;
-  overflow: hidden;
+<style>
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.page-content {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  padding-bottom: 5rem;
-}
-
-/* Page transition */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s ease;

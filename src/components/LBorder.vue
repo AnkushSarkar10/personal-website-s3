@@ -1,35 +1,6 @@
 <template>
-  <div class="l-border" aria-hidden="true">
-    <div class="l-border__vertical"></div>
-    <div class="l-border__horizontal"></div>
+  <div class="fixed inset-0 pointer-events-none z-1" aria-hidden="true">
+    <div class="absolute left-6 top-6 bottom-[4.5rem] w-[3px] bg-accent rounded-sm"></div>
+    <div class="absolute left-6 bottom-[4.5rem] w-2/5 h-[3px] bg-accent rounded-sm"></div>
   </div>
 </template>
-
-<style scoped>
-.l-border {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.l-border__vertical {
-  position: absolute;
-  left: 1.5rem;
-  top: 1.5rem;
-  bottom: 4.5rem;
-  width: 3px;
-  background-color: var(--accent);
-  border-radius: 2px;
-}
-
-.l-border__horizontal {
-  position: absolute;
-  left: 1.5rem;
-  bottom: 4.5rem;
-  width: 40%;
-  height: 3px;
-  background-color: var(--accent);
-  border-radius: 2px;
-}
-</style>
