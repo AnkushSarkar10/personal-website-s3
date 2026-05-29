@@ -22,4 +22,19 @@ const router = createRouter({
   ],
 })
 
+router.beforeEach((to, _from, next) => {
+  if (to.path !== '/' && !to.name) {
+    next('/')
+  } else {
+    next()
+  }
+})
+
+// Always start at home on fresh page load
+router.isReady().then(() => {
+  if (router.currentRoute.value.path !== '/') {
+    router.replace('/')
+  }
+})
+
 export default router

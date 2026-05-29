@@ -19,8 +19,8 @@ export function useTheme() {
     theme.value = theme.value === 'dark' ? 'light' : 'dark'
   }
   // remove
-  theme.value = 'light';
-  theme.value = 'dark';
+  // theme.value = 'light';
+  // theme.value = 'dark';
 
   return { theme, toggleTheme }
 }
