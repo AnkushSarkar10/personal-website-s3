@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import BottomNav from './components/BottomNav.vue'
-import LBorder from './components/LBorder.vue'
+import AnimBorder from './components/AnimBorder.vue'
 </script>
 
 <template>
   <div class="relative flex flex-col min-h-dvh overflow-hidden bg-bg text-text font-ubuntu antialiased">
-    <LBorder />
+    <AnimBorder />
     <main class="flex-1 flex items-center justify-center p-8 pb-20">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
