@@ -15,10 +15,17 @@ const route = useRoute()
     </router-link>
     <router-link
       to="/work"
-      class="flex-1 text-center py-4 px-8 text-[0.95rem] font-medium tracking-wide text-text-secondary hover:text-accent"
+      class="flex-1 text-center py-4 px-8 text-[0.95rem] font-medium tracking-wide text-text-secondary border-r border-nav-border hover:text-accent"
       :class="{ '!text-accent !font-bold': route.name === 'work' }"
     >
       work
+    </router-link>
+    <router-link
+      to="/contact"
+      class="flex-1 text-center py-4 px-8 text-[0.95rem] font-medium tracking-wide text-text-secondary hover:text-accent"
+      :class="{ '!text-accent !font-bold': route.name === 'contact' }"
+    >
+      contact
     </router-link>
   </nav>
 </template>
