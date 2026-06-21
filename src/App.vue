@@ -5,11 +5,11 @@ import BottomNav from './components/BottomNav.vue'
 import AnimBorder from './components/AnimBorder.vue'
 
 const route = useRoute()
-const showHomeLink = computed(() => ['about', 'work', 'contact'].includes(String(route.name)))
+const showHomeLink = computed(() => ['about', 'work', 'contact', 'blog'].includes(String(route.name)))
 </script>
 
 <template>
-  <div class="relative flex flex-col min-h-dvh overflow-hidden bg-bg text-text font-ubuntu antialiased">
+  <div class="relative flex flex-col min-h-dvh overflow-hidden bg-bg text-text font-aldrich antialiased">
     <!-- <AnimBorder /> -->
 
     <router-link

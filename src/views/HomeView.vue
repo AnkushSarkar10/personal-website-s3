@@ -11,7 +11,7 @@
         to="/blog"
         class="inline-block px-7 py-2.5 text-base font-medium tracking-wide text-text-secondary border border-nav-border rounded-lg hover:text-accent hover:border-accent hover:bg-accent/10 transition-colors"
       >
-        blog
+        my blogs
       </router-link>
     </div>
   </div>

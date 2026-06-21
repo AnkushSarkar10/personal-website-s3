@@ -8,7 +8,7 @@
       <span class="font-bold text-accent">ankush.sarkar2002@gmail.com</span>
     </a>
     <a
-      href="https://calendly.com/ankush-sarkar/15min"
+      href="https://calendly.com/ankush-sarkar2002/15min"
       target="_blank"
       rel="noopener noreferrer"
       class="group flex items-center justify-between border-b border-nav-border py-4 text-lg text-text-secondary transition-colors hover:border-accent hover:text-accent"
