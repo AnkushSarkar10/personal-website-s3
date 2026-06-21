@@ -1,9 +1,9 @@
 <template>
   <div class="flex flex-col items-center justify-center">
-    <h1 class="text-[clamp(4.5rem,7vw,10rem)] font-bold leading-none tracking-normal text-accent select-none">
+    <h1 class="font-black-ops-one text-[clamp(4.5rem,7vw,10rem)] leading-none tracking-normal text-accent select-none">
       Ankush
     </h1>
-    <p class="pt-1 text-lg font-medium leading-tight tracking-wide text-[#888888] md:text-xl">
+    <p class="font-ephesis pt-0 text-4xl leading-tight tracking-normal text-[#888888] md:text-5xl">
       software developer
     </p>
     <div class="hidden pt-5 md:block">

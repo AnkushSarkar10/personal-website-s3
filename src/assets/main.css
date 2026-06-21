@@ -1,6 +1,8 @@
 @import "tailwindcss";
 
 @theme {
+  --font-black-ops-one: 'Black Ops One', system-ui;
+  --font-ephesis: 'Ephesis', cursive;
   --font-ubuntu: 'Ubuntu', sans-serif;
   --color-accent: #eb151b;
   --color-bg: #ffffff;
