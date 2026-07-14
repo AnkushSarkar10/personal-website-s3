@@ -2,7 +2,7 @@
   <div class="relative max-w-[560px] w-full">
     <div class="flex flex-col gap-5 text-lg leading-relaxed text-text">
       <p>
-        i am <strong class="text-accent font-bold">ankush sarkar</strong>, a software developer.
+        i am <strong class="text-accent font-bold">ankush sarkar</strong>, a frontend developer.
       </p>
       <p>
         i graduated from mcmaster university in <strong class="text-accent font-bold">2026</strong> with a degree in computer science.

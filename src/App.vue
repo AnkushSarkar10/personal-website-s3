@@ -80,11 +80,6 @@ const showHomeLink = computed(() => ['about', 'work', 'contact', 'blog'].include
 </template>
 
 <style>
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.25s ease;
