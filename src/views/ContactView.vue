@@ -21,7 +21,7 @@
         href="https://x.com/TheBlazeGuy10"
         target="_blank"
         rel="noopener noreferrer"
-        class="font-bold text-accent hover:underline"
+        class="font-bold text-text-secondary transition-colors hover:text-accent hover:underline"
       >
         twitter
       </a>
@@ -29,7 +29,7 @@
         href="https://www.linkedin.com/in/ankush-sarkar-a55a5b213/"
         target="_blank"
         rel="noopener noreferrer"
-        class="font-bold text-accent hover:underline"
+        class="font-bold text-text-secondary transition-colors hover:text-accent hover:underline"
       >
         linkedin
       </a>
@@ -37,7 +37,7 @@
         href="https://github.com/AnkushSarkar10"
         target="_blank"
         rel="noopener noreferrer"
-        class="font-bold text-accent hover:underline"
+        class="font-bold text-text-secondary transition-colors hover:text-accent hover:underline"
       >
         github
       </a>
