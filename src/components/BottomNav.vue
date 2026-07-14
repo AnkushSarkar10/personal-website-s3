@@ -18,7 +18,7 @@ const route = useRoute()
       class="flex-1 text-center py-4 px-8 text-[0.95rem] font-medium tracking-wide text-text-secondary border-r border-nav-border hover:text-accent"
       :class="{ '!text-accent !font-bold': route.name === 'work' }"
     >
-      work
+      projects
     </router-link>
     <router-link
       to="/contact"
