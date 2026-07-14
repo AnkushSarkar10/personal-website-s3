@@ -5,7 +5,7 @@ import BottomNav from './components/BottomNav.vue'
 import AnimBorder from './components/AnimBorder.vue'
 
 const route = useRoute()
-const showHomeLink = computed(() => ['about', 'work', 'contact', 'blog'].includes(String(route.name)))
+const showHomeLink = computed(() => ['about', 'work', 'wip', 'contact', 'blog'].includes(String(route.name)))
 </script>
 
 <template>
