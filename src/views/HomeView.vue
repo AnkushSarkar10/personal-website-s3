@@ -3,7 +3,7 @@
     <h1 class="whitespace-nowrap text-center font-black-ops-one text-[clamp(2.25rem,7vw,10rem)] leading-none tracking-normal text-accent select-none">
       Ankush Sarkar
     </h1>
-    <p class="font-ephesis pt-0 text-4xl leading-tight tracking-normal text-[#888888] md:text-5xl">
+    <p class="font-lobster-two pt-0 text-4xl leading-tight tracking-normal text-[#888888] md:text-5xl">
       frontend developer
     </p>
     <div class="flex flex-wrap justify-center gap-3 pt-5">
