@@ -2,7 +2,6 @@
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import BottomNav from './components/BottomNav.vue'
-import AnimBorder from './components/AnimBorder.vue'
 
 const route = useRoute()
 const showHomeLink = computed(() => ['about', 'work', 'wip', 'contact', 'blog'].includes(String(route.name)))
@@ -10,7 +9,6 @@ const showHomeLink = computed(() => ['about', 'work', 'wip', 'contact', 'blog'].
 
 <template>
   <div class="relative flex flex-col min-h-dvh overflow-hidden bg-bg text-text font-aldrich antialiased">
-    <!-- <AnimBorder /> -->
 
     <router-link
       v-if="showHomeLink"
@@ -68,7 +66,7 @@ const showHomeLink = computed(() => ['about', 'work', 'wip', 'contact', 'blog'].
       </a>
     </div>
 
-    <main class="flex-1 flex items-center justify-center p-8 pb-20">
+    <main class="flex-1 flex items-center justify-center p-8 pb-28">
       <router-view v-slot="{ Component }">
         <transition name="fade" mode="out-in">
           <component :is="Component" />
