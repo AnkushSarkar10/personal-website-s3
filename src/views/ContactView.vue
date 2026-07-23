@@ -1,8 +1,8 @@
 <template>
-  <div class="relative flex w-full max-w-[560px] flex-col gap-5">
+  <div class="relative flex w-full max-w-[560px] flex-col items-start gap-5 text-left">
     <a
       href="mailto:ankush.sarkar2002@gmail.com"
-      class="group flex items-center justify-between border-b border-nav-border py-4 text-lg text-text-secondary transition-colors hover:border-accent hover:text-accent"
+      class="group flex w-full flex-col items-start gap-1 border-b border-nav-border py-4 text-left text-lg text-text-secondary transition-colors hover:border-accent hover:text-accent"
     >
       <span>email</span>
       <span class="font-bold text-accent">ankush.sarkar2002@gmail.com</span>
@@ -11,7 +11,7 @@
       href="https://calendly.com/ankush-sarkar2002/15min"
       target="_blank"
       rel="noopener noreferrer"
-      class="group flex items-center justify-between border-b border-nav-border py-4 text-lg text-text-secondary transition-colors hover:border-accent hover:text-accent"
+      class="group flex w-full flex-col items-start gap-1 border-b border-nav-border py-4 text-left text-lg text-text-secondary transition-colors hover:border-accent hover:text-accent"
     >
       <span>15 min call</span>
       <span class="font-bold text-accent">calendly</span>
