@@ -6,7 +6,6 @@ import BottomNav from './components/BottomNav.vue'
 
 const route = useRoute()
 const { x, y } = useMouse()
-const showHomeLink = computed(() => ['about', 'projects', 'wip', 'contact', 'blog'].includes(String(route.name)))
 const pointerGlow = computed(() => ({
   backgroundImage: `radial-gradient(32rem circle at ${x.value}px ${y.value}px, rgb(235 21 27 / 0.12), transparent 70%)`,
 }))
@@ -14,22 +13,6 @@ const pointerGlow = computed(() => ({
 
 <template>
   <div class="relative flex flex-col min-h-dvh overflow-hidden bg-bg text-text font-aldrich antialiased" :style="pointerGlow">
-
-    <router-link
-      v-if="showHomeLink"
-      to="/"
-      class="fixed top-5 left-5 z-20 flex h-10 w-10 items-center justify-center rounded-full border border-nav-border text-text-secondary transition-colors hover:border-accent hover:text-accent"
-      aria-label="Home"
-    >
-      <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path
-          d="M3 10.5 12 3l9 7.5V21a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1V10.5Z"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linejoin="round"
-        />
-      </svg>
-    </router-link>
 
     <div
       v-if="route.name === 'home'"
