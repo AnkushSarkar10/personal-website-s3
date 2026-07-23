@@ -1,14 +1,19 @@
 <script setup lang="ts">
+import { useMouse } from '@vueuse/core'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 import BottomNav from './components/BottomNav.vue'
 
 const route = useRoute()
+const { x, y } = useMouse()
 const showHomeLink = computed(() => ['about', 'projects', 'wip', 'contact', 'blog'].includes(String(route.name)))
+const pointerGlow = computed(() => ({
+  backgroundImage: `radial-gradient(32rem circle at ${x.value}px ${y.value}px, rgb(235 21 27 / 0.12), transparent 70%)`,
+}))
 </script>
 
 <template>
-  <div class="relative flex flex-col min-h-dvh overflow-hidden bg-bg text-text font-aldrich antialiased">
+  <div class="relative flex flex-col min-h-dvh overflow-hidden bg-bg text-text font-aldrich antialiased" :style="pointerGlow">
 
     <router-link
       v-if="showHomeLink"
@@ -66,24 +71,9 @@ const showHomeLink = computed(() => ['about', 'projects', 'wip', 'contact', 'blo
       </a>
     </div>
 
-    <main class="flex-1 flex items-center justify-center p-8 pb-28">
-      <router-view v-slot="{ Component }">
-        <transition name="fade" mode="out-in">
-          <component :is="Component" />
-        </transition>
-      </router-view>
+    <main class="flex flex-1 items-center justify-center p-8 pb-28">
+      <router-view />
     </main>
     <BottomNav />
   </div>
 </template>
-
-<style>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.25s ease;
-}
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-</style>
