@@ -8,9 +8,9 @@ const route = useRoute()
   <nav class="fixed bottom-0 left-0 right-0 z-10" aria-label="Primary">
     <div class="relative flex items-stretch border-t border-nav-border bg-nav-bg backdrop-blur-xl">
       <router-link
-        to="/work"
+        to="/projects"
         class="flex flex-1 items-center justify-center py-4 pl-8 pr-4 text-[0.95rem] font-medium tracking-wide text-text-secondary transition-colors hover:text-accent"
-        :class="{ '!text-accent !font-bold': route.name === 'work' }"
+        :class="{ '!text-accent !font-bold': route.name === 'projects' }"
       >
         projects
       </router-link>

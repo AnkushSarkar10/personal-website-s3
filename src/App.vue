@@ -4,7 +4,7 @@ import { useRoute } from 'vue-router'
 import BottomNav from './components/BottomNav.vue'
 
 const route = useRoute()
-const showHomeLink = computed(() => ['about', 'work', 'wip', 'contact', 'blog'].includes(String(route.name)))
+const showHomeLink = computed(() => ['about', 'projects', 'wip', 'contact', 'blog'].includes(String(route.name)))
 </script>
 
 <template>
