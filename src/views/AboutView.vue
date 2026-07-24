@@ -1,3 +1,47 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card'
+
+type LichessSpeed = 'bullet' | 'blitz' | 'rapid'
+
+interface LichessProfile {
+  username: string
+  perfs: Partial<Record<LichessSpeed, { rating: number }>>
+  count: {
+    all: number
+    draw: number
+    loss: number
+    win: number
+  }
+}
+
+const speeds: LichessSpeed[] = ['bullet', 'blitz', 'rapid']
+const lichessProfile = ref<LichessProfile>()
+const lichessLoading = ref(false)
+const lichessError = ref(false)
+
+async function loadLichessProfile(open: boolean) {
+  if (!open || lichessProfile.value || lichessLoading.value) return
+
+  lichessLoading.value = true
+  lichessError.value = false
+
+  try {
+    const response = await fetch('https://lichess.org/api/user/blaze_kush10')
+    if (!response.ok) throw new Error('Unable to load Lichess profile')
+    lichessProfile.value = await response.json()
+  } catch {
+    lichessError.value = true
+  } finally {
+    lichessLoading.value = false
+  }
+}
+</script>
+
 <template>
   <div class="relative max-w-[560px] w-full">
     <div class="flex flex-col gap-3 text-sm leading-relaxed text-text sm:gap-5 sm:text-lg">
@@ -21,12 +65,54 @@
       </p>
       <p>
         i love to play
-        <a
-          class="text-accent font-bold hover:underline"
-          href="https://lichess.org/@/blaze_kush10"
-          target="_blank"
-          rel="noopener noreferrer"
-        >chess</a>
+        <HoverCard @update:open="loadLichessProfile">
+          <HoverCardTrigger as-child>
+            <a
+              class="text-accent font-bold underline-offset-4 hover:underline"
+              href="https://lichess.org/@/blaze_kush10"
+              target="_blank"
+              rel="noopener noreferrer"
+            >chess</a>
+          </HoverCardTrigger>
+          <HoverCardContent
+            side="top"
+            :side-offset="8"
+            class="w-72 border-nav-border bg-bg text-sm text-text shadow-lg"
+          >
+            <div class="flex items-center justify-between border-b border-nav-border pb-3">
+              <div>
+                <p class="font-bold text-text">@blaze_kush10</p>
+                <p class="text-xs text-text-secondary">lichess.org</p>
+              </div>
+              <span class="rounded-full bg-accent/10 px-2 py-1 text-xs font-bold text-accent">
+                chess player
+              </span>
+            </div>
+
+            <p v-if="lichessLoading" class="py-4 text-center text-text-secondary">
+              loading profile...
+            </p>
+            <p v-else-if="lichessError" class="py-4 text-center text-text-secondary">
+              profile preview unavailable
+            </p>
+            <template v-else-if="lichessProfile">
+              <div class="grid grid-cols-3 gap-2 py-4 text-center">
+                <div v-for="speed in speeds" :key="speed">
+                  <p class="font-bold text-text">
+                    {{ lichessProfile.perfs[speed]?.rating ?? '-' }}
+                  </p>
+                  <p class="text-xs text-text-secondary">{{ speed }}</p>
+                </div>
+              </div>
+              <div class="flex justify-between border-t border-nav-border pt-3 text-xs text-text-secondary">
+                <span>{{ lichessProfile.count.all }} games</span>
+                <span>{{ lichessProfile.count.win }}W</span>
+                <span>{{ lichessProfile.count.draw }}D</span>
+                <span>{{ lichessProfile.count.loss }}L</span>
+              </div>
+            </template>
+          </HoverCardContent>
+        </HoverCard>
       </p>
     </div>
   </div>
