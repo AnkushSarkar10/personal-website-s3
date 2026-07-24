@@ -68,7 +68,7 @@ async function loadLichessProfile(open: boolean) {
         <HoverCard @update:open="loadLichessProfile">
           <HoverCardTrigger as-child>
             <a
-              class="text-accent font-bold underline-offset-4 hover:underline"
+              class="text-accent font-bold underline decoration-accent/50 underline-offset-4 transition-colors hover:decoration-accent"
               href="https://lichess.org/@/blaze_kush10"
               target="_blank"
               rel="noopener noreferrer"
@@ -84,9 +84,6 @@ async function loadLichessProfile(open: boolean) {
                 <p class="font-bold text-text">@blaze_kush10</p>
                 <p class="text-xs text-text-secondary">lichess.org</p>
               </div>
-              <span class="rounded-full bg-accent/10 px-2 py-1 text-xs font-bold text-accent">
-                chess player
-              </span>
             </div>
 
             <p v-if="lichessLoading" class="py-4 text-center text-text-secondary">
