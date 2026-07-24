@@ -1,6 +1,6 @@
 <template>
   <div class="relative max-w-[560px] w-full">
-    <div class="flex flex-col gap-5 text-lg leading-relaxed text-text">
+    <div class="flex flex-col gap-3 text-sm leading-relaxed text-text sm:gap-5 sm:text-lg">
       <p>
         i am a software engineer with a passion for building intuitive web and mobile applications.
       </p>
