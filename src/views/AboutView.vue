@@ -67,7 +67,7 @@ async function loadLichessProfile(open: boolean) {
         <HoverCard @update:open="loadLichessProfile">
           <HoverCardTrigger as-child>
             <a
-              class="text-accent font-bold underline decoration-accent/50 underline-offset-4 transition-colors hover:decoration-accent"
+              class="text-accent font-bold underline decoration-1 decoration-accent underline-offset-4 transition-colors hover:decoration-accent"
               href="https://lichess.org/@/blaze_kush10"
               target="_blank"
               rel="noopener noreferrer"
