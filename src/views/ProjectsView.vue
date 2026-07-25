@@ -9,8 +9,8 @@ import {
 const projects = [
   { id: 'slackfish-cloud', name: 'slackfish.cloud' },
   { id: 'habits-together', name: 'habits together' },
-  { id: 'slicc', name: 'slicc' },
   { id: 'yt-shorts-auto-scroll', name: 'yt shorts auto scroll' },
+  { id: 'slicc', name: 'slicc' },
   { id: 'new-tab', name: 'new tab' },
 ]
 </script>
