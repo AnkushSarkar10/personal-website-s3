@@ -1,26 +1,36 @@
+<script setup lang="ts">
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from '@/components/ui/accordion'
+
+const projects = [
+  { id: 'slackfish-cloud', name: 'slackfish.cloud' },
+  { id: 'habits-together', name: 'habits together' },
+  { id: 'slicc', name: 'slicc' },
+  { id: 'yt-shorts-auto-scroll', name: 'yt shorts auto scroll' },
+  { id: 'new-tab', name: 'new tab' },
+]
+</script>
+
 <template>
   <div class="relative max-w-[560px] w-full">
-    <div class="flex flex-col gap-5">
-      <router-link
-        to="/wip"
-        class="border-b border-nav-border py-4 text-base text-text-secondary transition-colors hover:border-accent hover:text-accent"
+    <Accordion type="single" collapsible class="w-full">
+      <AccordionItem
+        v-for="project in projects"
+        :key="project.id"
+        :value="project.id"
+        class="border-nav-border"
       >
-        <span class="font-bold">new tab</span>
-        <span class="ml-2 text-xs">(browser extension)</span>
-      </router-link>
-      <router-link
-        to="/wip"
-        class="border-b border-nav-border py-4 text-base text-text-secondary transition-colors hover:border-accent hover:text-accent"
-      >
-        <span class="font-bold">yt shorts auto scroll</span>
-        <span class="ml-2 text-xs">(browser extension)</span>
-      </router-link>
-      <router-link
-        to="/wip"
-        class="border-b border-nav-border py-4 text-base font-bold text-text-secondary transition-colors hover:border-accent hover:text-accent"
-      >
-        slackfish.cloud
-      </router-link>
-    </div>
+        <AccordionTrigger class="text-base font-bold text-text-secondary hover:text-accent hover:no-underline">
+          {{ project.name }}
+        </AccordionTrigger>
+        <AccordionContent class="text-text-secondary">
+          wip
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
   </div>
 </template>
