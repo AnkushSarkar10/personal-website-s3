@@ -16,7 +16,7 @@ const projects = [
 </script>
 
 <template>
-  <div class="relative max-w-[560px] w-full">
+  <div class="relative max-w-140 w-full">
     <Accordion type="single" collapsible class="w-full">
       <AccordionItem
         v-for="project in projects"
