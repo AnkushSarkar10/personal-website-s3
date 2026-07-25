@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
+
+function goHome() {
+  if (route.name !== 'home') router.back()
+}
 </script>
 
 <template>
@@ -9,6 +14,7 @@ const route = useRoute()
     <div class="relative flex items-stretch border-t border-nav-border bg-nav-bg backdrop-blur-xl">
       <router-link
         to="/projects"
+        :replace="route.name !== 'home'"
         class="flex flex-1 items-center justify-center py-4 pl-8 pr-4 text-[0.95rem] font-medium tracking-wide text-text-secondary transition-colors hover:text-accent"
         :class="{ '!text-accent !font-bold': route.name === 'projects' }"
       >
@@ -22,6 +28,7 @@ const route = useRoute()
 
       <router-link
         to="/about"
+        :replace="route.name !== 'home'"
         class="flex flex-1 items-center justify-center py-4 pl-4 pr-8 text-[0.95rem] font-medium tracking-wide text-text-secondary transition-colors hover:text-accent"
         :class="{ '!text-accent !font-bold': route.name === 'about' }"
       >
@@ -30,6 +37,7 @@ const route = useRoute()
 
       <router-link
         to="/"
+        @click.prevent="goHome"
         class="absolute left-1/2 top-0 flex h-14 w-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-2 border-nav-border bg-bg text-text-secondary transition-colors hover:border-accent hover:text-accent hover:scale-105"
         :class="{ '!border-accent !text-accent': route.name === 'home' }"
         aria-label="Home"
