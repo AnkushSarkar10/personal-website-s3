@@ -20,11 +20,6 @@ const router = createRouter({
       component: () => import('../views/ProjectsView.vue'),
     },
     {
-      path: '/wip',
-      name: 'wip',
-      component: () => import('../views/WipView.vue'),
-    },
-    {
       path: '/contact',
       name: 'contact',
       component: () => import('../views/ContactView.vue'),
